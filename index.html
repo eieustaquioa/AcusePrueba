@@ -45,22 +45,7 @@
             font-weight: bold;
         }
 
-      
 
-        /* Forzar que todas las tablas con colgroup tengan el mismo comportamiento */
-table:has(colgroup) {
-    width: 100%;
-    table-layout: fixed; /* CLAVE: hace que se respeten los anchos */
-}
-
-table:has(colgroup) td:first-child {
-    width: 150px;
-}
-
-table:has(colgroup) td:last-child {
-    width: auto;
-    word-break: break-word;
-}
     </style>
 </head>
 
@@ -80,11 +65,11 @@ table:has(colgroup) td:last-child {
     </colgroup>
     <tr>
         <td class="bold">Estimado(a) C.  </td>
-        <td><span th:text="${SOLICITANTE != null ? SOLICITANTE : ''}"></span></td>
+        <td>INTEGRADORA DE URBANIZACIONES SICNUM, S DE RL DE CV estudios</td>
     </tr>
     <tr>
         <td class="bold">RFC:  </td>
-        <td><span th:text="${RFC_SOLICITANTE != null ? RFC_SOLICITANTE : ''}"></span></td>
+       <td>AAL0409235E6</td>
     </tr>
 </table>
 

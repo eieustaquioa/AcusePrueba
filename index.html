@@ -65,7 +65,9 @@
     </colgroup>
     <tr>
         <td class="bold">Estimado(a) C.  </td>
-        <td>      INTEGRADORA DE URBANIZACIONES SICNUM, S DE RL DE CV estudios</td>
+<td>
+    <span th:text="${SOLICITANTE != null ? SOLICITANTE.replaceFirst('^\\s+', '') : ''}"></span>
+</td>
     </tr>
     <tr>
         <td class="bold">RFC:  </td>

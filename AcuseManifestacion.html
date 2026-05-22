@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Acuse Manifestacion
+    </title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px;
+            font-size: 8pt;
+        }
+
+        .header,
+        .footer {
+            text-align: center;
+            background-color: #F6F6F6;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .property-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .property-table th,
+        .property-table td {
+            padding: 5px;
+            /* Se eliminó el borde */
+        }
+
+        /* Ajuste de ancho de columnas a 40% - 60% */
+        .property-table td {
+            width: 30%; /* Ancho de 40% para la primera columna */
+        }
+
+        .property-table td:last-child {
+            width: 70%; /* Ancho de 60% para la segunda columna */
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .justified {
+            text-align: justify;
+        }
+
+        .signature {
+            font-family: 'Soberana Sans', sans-serif;
+            font-size: 8pt;
+        }
+
+        img {
+            width: 100%; /* Ajusta la imagen al 100% del contenedor */
+            height: auto; /* Mantiene la proporción */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <img th:src="'data:image/png;base64,' + ${HEADER_IMG}" alt="Encabezado Gobierno de México" />
+        <h2 class="bold">ACUSE DE MANIFESTACIÓN DE VALOR</h2>
+        <h3>Ventanilla Digital Mexicana de Comercio Exterior</h3>
+        <h4>Promoción o solicitud en materia de comercio exterior</h4>
+    </div>
+
+    <table>
+        <colgroup>
+            <col style="width: 150px;"/>
+            <col style="width: 50px;"/>
+        </colgroup>
+        <tr>
+            <td class="bold">Estimado(a) C. </td>
+            <td><td>   INTEGRADORA DE URBANIZACIONES SIGNUM, S DE RL DE CV  </td></td>
+        </tr>
+    </table>
+
+    <table>
+        <colgroup>
+            <col style="width: 150px;"/>
+            <col style="width: 50px;"/>
+        </colgroup>
+        <tr>
+            <td class="bold">RFC: </td>
+            <td>AAL0409235E6</td>
+        </tr>
+    </table>
+
+    <table class="property-table">
+        <tr>
+            <td>Siendo las <span th:text="${HORA_ACTUAL != null ? HORA_ACTUAL : ''}"></span> del <span th:text="${DIA_ACTUAL != null ? DIA_ACTUAL : ''}"></span>, se tiene por recibido y
+                atendido su(s) registro(s) de Manifestación de Valor presentado(s) a través de la Ventanilla Digital
+                Mexicana de Comercio.</td>
+        </tr>
+    </table>
+
+    <table class="property-table">
+        <tr>
+            <td class="bold">RFC del importador: </td>
+            <td><span th:text="${RFC_IMPORTADOR != null ? RFC_IMPORTADOR : ''}"></span></td>
+        </tr>
+        <tr>
+            <td class="bold">Nombre o Razón Social del importador: </td>
+            <td><span th:text="${IMPORTADOR != null ? IMPORTADOR : ''}"></span></td>
+        </tr>
+        <tr>
+            <td class="bold">Operación: </td>
+            <td>Manifestación Valor</td>
+        </tr>
+        <tr>
+            <td class="bold">eDocument: </td>
+            <td><span th:text="${E_DOCUMENT != null ? E_DOCUMENT : ''}"></span></td>
+        </tr>
+        <tr>
+            <td class="bold">Fecha de registro: </td>
+            <td><span th:text="${FECHA_REGISTRO != null ? FECHA_REGISTRO : ''}"></span> <span th:text="${HORA_REGISTRO != null ? HORA_REGISTRO : ''}"></span></td>
+        </tr>
+        <tr>
+            <td class="bold">Acuses de Valor (COVE's) asociados: </td>
+            <td><span th:text="${COVES != null ? COVES : ''}"></span></td>
+        </tr>
+    </table>
+
+    <div class="signature">
+        <p class="bold">Sello Digital del Solicitante:</p>
+        <table>
+            <tr>
+                <td><span th:text="${FIRMA_SOLICITANTE != null ? FIRMA_SOLICITANTE : ''}"></span></td>
+            </tr>
+        </table>
+
+        <p class="bold">Sello Digital de la Ventanilla:</p>
+        <table>
+            <tr>
+                <td><span th:text="${FIRMA_SISTEMS != null ? FIRMA_SISTEMS : ''}"></span></td>
+            </tr>
+        </table>
+
+        <p class="bold">Cadena Original:</p>
+        <table>
+            <tr>
+                <td><span th:text="${CADENA_ORIGINAL != null ? CADENA_ORIGINAL : ''}"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p class="justified">Los datos personales suministrados a través de las solicitudes, promociones, trámites,
+            consultas y pagos, hechos por medios electrónicos e impresos, serán protegidos, incorporados y tratados en
+            el sistema de datos personales de la "Ventanilla Digital" acorde con la Ley Federal de Transparencia y
+            Acceso a la Información Pública Gubernamental y las demás disposiciones legales aplicables; y podrán ser
+            transmitidos a las autoridades competentes en materia de comercio exterior, al propio titular de la
+            información, o a terceros, en este último caso siempre que las disposiciones aplicables contemplen dicha
+            transferencia.</p>
+        <img th:src="'data:image/png;base64,' + ${FOOTER_IMG}" alt="Pie de página Gobierno de México" />
+    </div>
+
+</body>
+
+</html>
